@@ -14,7 +14,19 @@
   <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 <body>
-  <div class="wrapper">
+  <nav>
+      <% if logged_in? %>
+        <a href="/workouts/new">Log A New Workout</a>
+        <a href="/logout">Log Out</a>
+      <% else %>
+
+      Click <a href="/login">HERE</a> to login.          
+          <br></br>
+      Click <a href="/signup">HERE</a> to create a new account.
+
+      <% end %>
+  </nav>
+  <div class="wrapper">      
 
       <%= yield %>
 
