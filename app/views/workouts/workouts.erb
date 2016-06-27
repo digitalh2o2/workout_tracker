@@ -1,0 +1,25 @@
+<h2>Welcome, <%= @user.username %>!</h2>
+<% if flash.has?(:message) %>
+	<%= flash[:message] %>
+<% end %>
+<p>Here are the list of your workouts.</p>
+<% Workout.all.each do |workout| %>
+<table style="width: 100%">
+	<tr>
+		<td>Exercise</td>
+		<td>Pounds</td>
+		<td>Repetitions</td>
+		<td>Sets</td>
+		<td>Muscle Group</td>
+		<td>Date</td>
+	</tr>
+	<tr>
+		<td><%= workout.name %></td>
+		<td><%= workout.pounds %></td>
+		<td><%= workout.repetitions %></td>
+		<td><%= workout.sets %></td>
+		<td><%= workout.muscle_group %></td>
+		<td><%= workout.date %></td>
+	</tr>
+</table>
+<% end %>
