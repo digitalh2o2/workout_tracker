@@ -33,4 +33,13 @@ class WorkoutsController < ApplicationController
 			redirect to '/workouts'
 		end
 	end
+
+	get '/workouts/:id' do
+		if !session[:user_id]
+			redirect to '/login'
+		else
+			@workout = Workout.find_by_id(params[:id])
+			erb :'/workouts/edit_workout'
+		end
+	end
 end
