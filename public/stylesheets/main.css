@@ -92,9 +92,13 @@
   }
 
   td {
-    width: 16.66%;
+    width: 10.00%;
     text-align: left;
     border: 1px solid black;
+  }
+
+  .left-column {
+    width: 3%;
   }
 }
 
