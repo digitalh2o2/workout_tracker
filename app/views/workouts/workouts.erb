@@ -6,7 +6,7 @@
 <% @user.workouts.each do |workout| %>
 <table>
 	<tr>
-		<td span class="left-column">Id</td>
+		<td span class="left-column">Workout #<%= workout.id %></td>
 		<td>Exercise</td>
 		<td>Pounds</td>
 		<td>Repetitions</td>
@@ -16,7 +16,7 @@
 	</tr>
 	<br>
 	<tr>
-		<td span class="left-column"><%= workout.id %></td>
+		<td span class="left-column"><a href="/workouts/:id/edit">Edit Workout</a><br><a href="/workouts/:id">Delete Tweet</a></td>
 		<td><%= workout.name %></td>
 		<td><%= workout.pounds %></td>
 		<td><%= workout.repetitions %></td>

@@ -39,7 +39,7 @@ class WorkoutsController < ApplicationController
 			redirect to '/login'
 		else
 			@workout = Workout.find_by_id(params[:id])
-			erb :'/workouts/edit_workout'
+			erb :'/workouts/show_workout'
 		end
 	end
 end
