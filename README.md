@@ -44,3 +44,9 @@ Directory structure is as followed:
 |__Rakefile
 |__config.ru
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/digitalh2o2/workout_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+Special thanks to thebrianemory for creating the `gem: corneal` which provided basic stucture for a Sinatra Applications. Visit https://github.com/thebrianemory/corneal for more details.
