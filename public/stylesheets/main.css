@@ -13,7 +13,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: #eee;
+    background-image: url("../images/main_page.jpg");
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -51,6 +51,10 @@
     margin-bottom: 18px;
   }
 
+  div.home {
+    text-align: center;
+  }
+
   .main {
     overflow: hidden;
   }
@@ -83,6 +87,7 @@
   }
 
   nav {
+    color: white;
     margin-left: 1%;
   }
 
@@ -100,6 +105,11 @@
   .left-column {
     width: 8%;
   }
+
+  img {
+    float: right;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
