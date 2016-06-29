@@ -1,0 +1,15 @@
+<h2>Edit Workout <%= @workout.id %></h2>
+<% if flash.has?(:message) %>
+	<%= flash[:message] %>
+<% end %>
+
+<form method="post" action="/workouts/<%= @workout.id %>">
+	<input type="hidden" id="hidden" name="_method" value="patch">
+	<h4>Exercise: <input type="text" id="name" name="name" value="<%= @workout.name %>"> </h4>
+	<h4>Pounds: <input type="text" id="pounds" name="pounds" value="<%= @workout.pounds %>"> </h4>
+	<h4>Repetitions: <input type="text" id="repetitions" name="repetitions" value="<%= @workout.repetitions %>"> </h4>
+	<h4>Sets: <input type="text" id="sets" name="sets" value="<%= @workout.sets %>"> </h4>
+	<h4>Muscle Group Worked On: <input type="text" id="muscle_group" name="muscle_group" value="<%= @workout.muscle_group %>"> </h4>
+	<h4>Date You Worked Out On: <input type="text" id="date" name="date" value="<%= @workout.date %>"> </h4>
+	<input type="submit" value="Edit Workout">
+</form>

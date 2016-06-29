@@ -42,4 +42,31 @@ class WorkoutsController < ApplicationController
 			erb :'/workouts/show_workout'
 		end
 	end
+
+	get '/workouts/:id/edit' do
+		if !session[:user_id]
+			redirect to '/login'
+		else
+			@workout = Workout.find_by_id(params[:id])
+			erb :'/workouts/edit_workout'
+		end
+	end
+
+	patch '/workouts/:id' do
+		@workout = Workout.find_by_id(params[:id])
+		if	!session[:user_id]
+			redirect to '/login'
+		elsif
+			@workout.name = params[:name]
+			@workout.pounds = params[:pounds]
+			@workout.repetitions = params[:repetitions]
+			@workout.sets = params[:sets]
+			@workout.muscle_group = params[:muscle_group]
+			@workout.date = params[:date]
+			@workout.save
+
+			flash[:message] = "Successfully updated your workout!"
+			redirect to '/workouts'
+		end			
+	end
 end
