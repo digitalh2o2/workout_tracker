@@ -54,9 +54,9 @@ class WorkoutsController < ApplicationController
 
 	patch '/workouts/:id' do
 		@workout = Workout.find_by_id(params[:id])
-		if	!session[:user_id]
+		if !session[:user_id]
 			redirect to '/login'
-		elsif
+		else
 			@workout.name = params[:name]
 			@workout.pounds = params[:pounds]
 			@workout.repetitions = params[:repetitions]
@@ -68,5 +68,20 @@ class WorkoutsController < ApplicationController
 			flash[:message] = "Successfully updated your workout!"
 			redirect to '/workouts'
 		end			
+	end
+
+	delete '/workouts/:id/delete' do
+		@workout = Workout.find(params[:id])
+		if !session[:user_id]
+			redirect to '/login'
+		elsif !current_user
+			flash[:message] = "You can only delete workouts that you've created!"
+			redirect to '/login'
+		else
+			@workout.delete
+			flash[:message] = "Successfully deleted your workout!"
+
+			redirect to '/workouts'
+		end
 	end
 end
