@@ -1,1 +1,15 @@
-<h2>Workout <%= @workout %>, Exercise </h2>
+<h2>Workout <%= @workout.id %>: </h2>
+
+<h3>Exercise: <%= @workout.name %></h3>
+<h3>Pounds: <%= @workout.pounds %> lbs</h3>
+<h3>Repetitions: <%= @workout.repetitions %></h3>
+<h3>Sets: <%= @workout.sets %></h3>
+<h3>Muscle Group Worked Out: <%= @workout.muscle_group %></h3>
+<h3>Date You Worked Out On: <%= @workout.date %></h3>
+<a href="/workouts/<%= @workout.id %>/edit"><button>Edit Workout</button></a>
+<form method="get" action="/"></form>
+<br>
+<form method="post" action="/workouts/<%= @workout.id %>/delete">
+	<input type="hidden" id="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Workout">
+</form>
